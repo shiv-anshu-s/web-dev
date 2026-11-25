@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: History of Internet, WWW, Protocols & Web Architecture - Web Technology (CS35302)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="sub-badge">Unit - 01 &bull; Duration: 7 Hours</div>
+        <h1>History of Internet, WWW, Protocols & Architecture</h1>
+        <p>Web Technology (CS35302) &bull; B.Tech CSE 5th Semester</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <section class="card">
+            <div class="card-title">
+                <span>Unit 1 Notes & Study Material</span>
+                <a href="notes/unit1.pdf" target="_blank" class="btn btn-outline">📥 Download PDF Notes</a>
+            </div>
+
+            <!-- PDF Viewer Section -->
+            <div class="pdf-fallback">
+                <span><strong>📄 PDF Reader:</strong> Neeche PDF viewer me notes padhein ya seedhe download karein.</span>
+                <a href="notes/unit1.pdf" target="_blank" class="btn btn-primary">Open Fullscreen PDF ↗</a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="notes/unit1.pdf" title="Unit 1 Full Notes PDF">
+                    <p>Your browser does not support iframes. <a href="notes/unit1.pdf">Click here to view or download the PDF file.</a></p>
+                </iframe>
+            </div>
+
+            <!-- Full-Length Comprehensive Notes Text -->
+            <article class="notes-content">
+                <h2>1. History of the Internet & World Wide Web (WWW)</h2>
+                
+                <h3>1.1 Origin & Evolution of the Internet</h3>
+                <p>
+                    The <strong>Internet</strong> is a global network of interconnected computers communicating via standardized communication protocols (TCP/IP). Its evolution spans several historic milestones:
+                </p>
+                <ul>
+                    <li><strong>1969 - ARPANET (Advanced Research Projects Agency Network):</strong> Funded by the US Department of Defense (DoD). It established the first packet-switching network connecting four university nodes (UCLA, Stanford, UC Santa Barbara, and University of Utah).</li>
+                    <li><strong>1983 - TCP/IP Adoption:</strong> On January 1, 1983 ("Flag Day"), ARPANET officially replaced NCP (Network Control Protocol) with the <strong>TCP/IP protocol suite</strong>, marking the true birth of the modern Internet.</li>
+                    <li><strong>1986 - NSFNET:</strong> The National Science Foundation created NSFNET to connect supercomputing centers across the US, expanding academic and scientific connectivity.</li>
+                    <li><strong>1990s - Commercialization:</strong> Decommissioning of ARPANET (1990) and opening of the Internet backbone to commercial ISPs (1995) created the exponential consumer explosion.</li>
+                </ul>
+
+                <div class="note-box key-point">
+                    <strong>Internet vs. World Wide Web (Key Difference):</strong><br>
+                    The <strong>Internet</strong> is the physical networking infrastructure (routers, optical cables, satellites, protocols) connecting millions of computers worldwide. The <strong>World Wide Web (WWW)</strong> is an information service operating on top of the Internet, allowing documents and multimedia to be interconnected via hyperlinks.
+                </div>
+
+                <h3>1.2 The World Wide Web (WWW)</h3>
+                <p>
+                    Invented in <strong>1989 by Sir Tim Berners-Lee</strong> at CERN (European Organization for Nuclear Research) to facilitate information sharing among scientists.
+                </p>
+                <p>The WWW is built upon three core technological pillars:</p>
+                <ol>
+                    <li><strong>URI / URL (Uniform Resource Identifier / Locator):</strong> A universal addressing scheme used to uniquely identify and locate resources on the web (e.g., <code>https://www.example.com/index.html</code>).</li>
+                    <li><strong>HTTP (Hypertext Transfer Protocol):</strong> The underlying application protocol defining how messages are formatted and transmitted between web clients and web servers.</li>
+                    <li><strong>HTML (Hypertext Markup Language):</strong> The standard markup language used to structure web documents and establish hypertext links.</li>
+                </ol>
+
+                <div class="note-box">
+                    <strong>Components of a URL:</strong><br>
+                    <code>https://www.example.com:443/courses/cs/notes.html?unit=1#section2</code><br>
+                    &bull; <strong>Scheme/Protocol:</strong> <code>https</code><br>
+                    &bull; <strong>Host / Domain:</strong> <code>www.example.com</code><br>
+                    &bull; <strong>Port:</strong> <code>443</code> (Default for HTTPS, 80 for HTTP)<br>
+                    &bull; <strong>Path:</strong> <code>/courses/cs/notes.html</code><br>
+                    &bull; <strong>Query String:</strong> <code>?unit=1</code><br>
+                    &bull; <strong>Fragment Identifier:</strong> <code>#section2</code>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>2. HTML (HyperText Markup Language)</h2>
+                <p>
+                    HTML is the skeleton of every web page. It uses predefined tags enclosed in angle brackets (<code>&lt;tagname&gt;</code>) to instruct the browser how content should be rendered.
+                </p>
+                <h3>Basic Anatomy of an HTML5 Document:</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Main Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph with a &lt;a href="https://example.com"&gt;Hyperlink&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code>: Informs the browser that the document is written in modern HTML5.</li>
+                    <li><code>&lt;html&gt;</code>: The root element of an HTML page.</li>
+                    <li><code>&lt;head&gt;</code>: Holds metadata, document title, character sets, external stylesheets, and scripts not directly visible in the viewport.</li>
+                    <li><code>&lt;body&gt;</code>: Contains all visible elements (headings, paragraphs, images, tables, forms).</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>3. Network & Application Protocols</h2>
+                <p>Protocols define strict rules and data formats enabling diverse hardware and software platforms to communicate reliably.</p>
+
+                <h3>3.1 HTTP (HyperText Transfer Protocol)</h3>
+                <p>
+                    HTTP is an application-layer, stateless, request-response protocol running over TCP (default port 80; port 443 for encrypted HTTPS).
+                </p>
+                <h4>HTTP Methods (Verbs):</h4>
+                <ul>
+                    <li><strong>GET:</strong> Requests data from a specified resource without altering server state (Idempotent & Safe).</li>
+                    <li><strong>POST:</strong> Submits data to be processed to a specified resource (e.g., form submissions, creates new resource, Non-Idempotent).</li>
+                    <li><strong>PUT:</strong> Completely updates or replaces an existing target resource (Idempotent).</li>
+                    <li><strong>PATCH:</strong> Applies partial modifications to a resource.</li>
+                    <li><strong>DELETE:</strong> Deletes the specified resource.</li>
+                    <li><strong>HEAD:</strong> Same as GET, but transfers only the status line and header section without response body.</li>
+                </ul>
+
+                <h4>HTTP Status Codes:</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Range</th>
+                                <th>Meaning & Common Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1xx Informational</strong></td>
+                                <td>100 - 199</td>
+                                <td>Request received, continuing process (e.g., <code>101 Switching Protocols</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2xx Success</strong></td>
+                                <td>200 - 299</td>
+                                <td>Action successfully received and accepted (e.g., <code>200 OK</code>, <code>201 Created</code>, <code>204 No Content</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3xx Redirection</strong></td>
+                                <td>300 - 399</td>
+                                <td>Further action needed to complete request (e.g., <code>301 Moved Permanently</code>, <code>304 Not Modified</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4xx Client Error</strong></td>
+                                <td>400 - 499</td>
+                                <td>Request contains bad syntax or cannot be fulfilled (e.g., <code>400 Bad Request</code>, <code>401 Unauthorized</code>, <code>403 Forbidden</code>, <code>404 Not Found</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5xx Server Error</strong></td>
+                                <td>500 - 599</td>
+                                <td>Server failed to fulfill an apparently valid request (e.g., <code>500 Internal Server Error</code>, <code>502 Bad Gateway</code>, <code>503 Service Unavailable</code>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>3.2 Email Protocols: SMTP, POP3, IMAP & MIME</h3>
+                <p>Email delivery requires separate protocols for <em>sending (pushing)</em> messages across servers and <em>retrieving (pulling)</em> messages to the client machine:</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Protocol</th>
+                                <th>Full Name</th>
+                                <th>Port</th>
+                                <th>Functionality & Characteristics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SMTP</strong></td>
+                                <td>Simple Mail Transfer Protocol</td>
+                                <td>25, 587 (TLS), 465 (SSL)</td>
+                                <td><strong>Push Protocol</strong>. Used by email clients to send outgoing messages to mail servers, and for mail servers to relay messages to destination mail servers. Text-based protocol.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>POP3</strong></td>
+                                <td>Post Office Protocol version 3</td>
+                                <td>110, 995 (SSL)</td>
+                                <td><strong>Pull Protocol</strong>. Downloads emails from mail server to local computer and typically deletes them from the server. One-way retrieval, not suited for multiple devices.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IMAP</strong></td>
+                                <td>Internet Message Access Protocol</td>
+                                <td>143, 993 (SSL)</td>
+                                <td><strong>Pull & Sync Protocol</strong>. Keeps emails stored on the server. Clients sync state across multiple devices (folders, read/unread status, drafts). Superior to POP3 for modern mobile/multi-device setups.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MIME</strong></td>
+                                <td>Multipurpose Internet Mail Extensions</td>
+                                <td>N/A (Header specification)</td>
+                                <td>Extends standard RFC 822 7-bit ASCII email format to support non-ASCII characters, audio, video, binary attachments, and multipart message bodies using Base64 encoding.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>4. Domain Name System (DNS)</h2>
+                <p>
+                    DNS is the phonebook of the Internet. It is a hierarchical, distributed database system that translates human-friendly domain names (e.g., <code>google.com</code>) into machine-routable numerical IP addresses (e.g., <code>142.250.190.46</code>).
+                </p>
+
+                <h3>4.1 DNS Hierarchy Structure:</h3>
+                <ul>
+                    <li><strong>Root Level (<code>.</code>):</strong> Managed by ICANN across 13 root server clusters globally.</li>
+                    <li><strong>Top-Level Domain (TLD) Servers:</strong> Handles extensions like <code>.com</code>, <code>.org</code>, <code>.edu</code>, <code>.in</code>, <code>.gov</code>.</li>
+                    <li><strong>Authoritative Name Servers:</strong> The final authority holding the actual DNS resource records for a specific domain.</li>
+                </ul>
+
+                <h3>4.2 Key DNS Record Types:</h3>
+                <ul>
+                    <li><strong>A Record:</strong> Maps hostname to IPv4 address (e.g., <code>example.com &rarr; 93.184.216.34</code>).</li>
+                    <li><strong>AAAA Record:</strong> Maps hostname to IPv6 address (128-bit).</li>
+                    <li><strong>CNAME (Canonical Name):</strong> Creates an alias pointing to another domain name (e.g., <code>www.example.com &rarr; example.com</code>).</li>
+                    <li><strong>MX (Mail Exchange):</strong> Directs incoming mail to specified mail servers for that domain.</li>
+                    <li><strong>NS (Name Server):</strong> Delegates a DNS zone to use given authoritative name servers.</li>
+                    <li><strong>TXT:</strong> Holds arbitrary text used for domain ownership validation, SPF, and DKIM email security.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>5. Web Browsers & Web Servers</h2>
+
+                <h3>5.1 Web Browser Architecture:</h3>
+                <p>A web browser is a client software application that retrieves, renders, and traverses information resources on the World Wide Web.</p>
+                <div class="note-box">
+                    <strong>Major Components of a Browser:</strong><br>
+                    1. <strong>User Interface (UI):</strong> Address bar, back/forward buttons, bookmarking menu.<br>
+                    2. <strong>Browser Engine:</strong> Marshals actions between the UI and the rendering engine.<br>
+                    3. <strong>Rendering Engine:</strong> Parses HTML & CSS to produce the visual layout on screen (e.g., <em>Blink</em> in Chrome/Edge, <em>Gecko</em> in Firefox, <em>WebKit</em> in Safari).<br>
+                    4. <strong>Networking Layer:</strong> Handles HTTP/HTTPS, DNS queries, caching, and network connections.<br>
+                    5. <strong>JavaScript Interpreter / Engine:</strong> Compiles and executes JS code (e.g., <em>V8</em> in Chrome, <em>SpiderMonkey</em> in Firefox).<br>
+                    6. <strong>UI Backend:</strong> Draws basic widgets like windows and combo boxes using OS drawing primitives.<br>
+                    7. <strong>Data Storage / Persistence:</strong> LocalStorage, SessionStorage, IndexedDB, Cookies, and Cache.
+                </div>
+
+                <h3>5.2 Critical Rendering Path (How a Browser Renders a Page):</h3>
+                <ol>
+                    <li>Parse HTML markup to construct the <strong>DOM (Document Object Model) Tree</strong>.</li>
+                    <li>Parse CSS styles to construct the <strong>CSSOM (CSS Object Model) Tree</strong>.</li>
+                    <li>Combine DOM and CSSOM to create the <strong>Render Tree</strong> (containing only visible nodes).</li>
+                    <li><strong>Layout (Reflow):</strong> Calculate the exact coordinates and size of each visible element on the viewport.</li>
+                    <li><strong>Paint (Repaint):</strong> Rasterize and fill pixels on the screen (colors, text, borders, images).</li>
+                    <li><strong>Composite:</strong> Layer ordering for hardware-accelerated rendering.</li>
+                </ol>
+
+                <h3>5.3 Web Server Concepts & Working:</h3>
+                <p>
+                    A <strong>Web Server</strong> consists of hardware (physical computer) and software (e.g., Apache HTTP Server, Nginx, Microsoft IIS) that listens on a dedicated TCP port (80/443) and serves client requests over HTTP/HTTPS.
+                </p>
+                <ul>
+                    <li><strong>Static Web Server:</strong> Sends hosted files (HTML, CSS, images, client scripts) directly to the browser as-is without processing.</li>
+                    <li><strong>Dynamic Web Server:</strong> Consists of a static server plus application software and database (e.g., Node.js, PHP, Python/Django, Java Servlets). The server processes business logic, queries database, and generates customized HTML before returning it to client.</li>
+                </ul>
+
+                <div class="note-box exam-tip">
+                    <strong>Exam Quick Revision Checklist for Unit 1:</strong><br>
+                    &bull; Definition and difference: Internet vs WWW.<br>
+                    &bull; HTTP Request/Response format and HTTP 1.1 vs 2.0 differences.<br>
+                    &bull; Differences between SMTP (push), POP3 (pull & delete), and IMAP (pull & sync).<br>
+                    &bull; DNS resolution process (Iterative vs Recursive queries).<br>
+                    &bull; 7 layers of Browser Architecture & the Critical Rendering Path.
+                </div>
+            </article>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="nav-bottom">
+                <div>
+                    <a href="index.html" class="btn btn-secondary">🏠 Back to Syllabus Table</a>
+                </div>
+                <div class="nav-bottom-right">
+                    <a href="unit2.html" class="btn btn-primary">Next: Unit 2 ➡</a>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Department of Computer Science & Engineering</strong> &bull; B.Tech 5th Semester</p>
+        <p>Web Technology (CS35302) &bull; Unit 1 Study Material</p>
+    </footer>
+
+</body>
+</html>

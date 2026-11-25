@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: HTML Components, CSS, DHTML, XML & Processors - Web Technology (CS35302)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="sub-badge">Unit - 02 &bull; Duration: 8 Hours</div>
+        <h1>HTML Components, CSS, DHTML, XML & Processors</h1>
+        <p>Web Technology (CS35302) &bull; B.Tech CSE 5th Semester</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <section class="card">
+            <div class="card-title">
+                <span>Unit 2 Notes & Study Material</span>
+                <a href="notes/unit2.pdf" target="_blank" class="btn btn-outline">📥 Download PDF Notes</a>
+            </div>
+
+            <!-- PDF Viewer Section -->
+            <div class="pdf-fallback">
+                <span><strong>📄 PDF Reader:</strong> Neeche PDF viewer me notes padhein ya seedhe download karein.</span>
+                <a href="notes/unit2.pdf" target="_blank" class="btn btn-primary">Open Fullscreen PDF ↗</a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="notes/unit2.pdf" title="Unit 2 Full Notes PDF">
+                    <p>Your browser does not support iframes. <a href="notes/unit2.pdf">Click here to view or download the PDF file.</a></p>
+                </iframe>
+            </div>
+
+            <!-- Full-Length Comprehensive Notes Text -->
+            <article class="notes-content">
+                <h2>1. HTML Components (Lists, Tables, Images, Forms, Frames)</h2>
+
+                <h3>1.1 Lists</h3>
+                <p>HTML offers three distinct list types for structuring items:</p>
+                <ul>
+                    <li><strong>Ordered Lists (<code>&lt;ol&gt;</code>):</strong> Numbered sequence (1, 2, 3 or A, B, C or I, II, III using the <code>type</code> attribute).</li>
+                    <li><strong>Unordered Lists (<code>&lt;ul&gt;</code>):</strong> Bulleted sequence (disc, circle, square).</li>
+                    <li><strong>Description Lists (<code>&lt;dl&gt;</code>):</strong> Key-value pair terms (<code>&lt;dt&gt;</code> for term, <code>&lt;dd&gt;</code> for description).</li>
+                </ul>
+
+                <h3>1.2 Tables</h3>
+                <p>Tables organize tabular data into rows and columns using <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (table row), <code>&lt;th&gt;</code> (table header), and <code>&lt;td&gt;</code> (table data cell).</p>
+                <div class="note-box">
+                    <strong>Crucial Table Attributes & Sub-elements:</strong><br>
+                    &bull; <code>colspan="n"</code>: Merges a cell horizontally across <em>n</em> columns.<br>
+                    &bull; <code>rowspan="n"</code>: Merges a cell vertically across <em>n</em> rows.<br>
+                    &bull; Semantic elements: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, and <code>&lt;caption&gt;</code>.
+                </div>
+
+                <h3>1.3 Images</h3>
+                <p>Inserted using the empty (self-closing) tag <code>&lt;img&gt;</code>.</p>
+<pre><code>&lt;img src="assets/diagram.png" alt="System Architecture Diagram" width="600" height="400" loading="lazy"&gt;</code></pre>
+                <p><strong>Attributes:</strong> <code>src</code> (path or URL), <code>alt</code> (accessibility alternate text and SEO), <code>loading="lazy"</code> (defers loading off-screen images until scrolled near viewport).</p>
+
+                <h3>1.4 Forms</h3>
+                <p>HTML Forms gather user input and transmit it to a server for processing.</p>
+<pre><code>&lt;form action="/submit-data" method="POST" enctype="multipart/form-data"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+
+    &lt;label for="pwd"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="pwd" name="password" required&gt;
+
+    &lt;label for="course"&gt;Course:&lt;/label&gt;
+    &lt;select id="course" name="course"&gt;
+        &lt;option value="cse"&gt;Computer Science&lt;/option&gt;
+        &lt;option value="it"&gt;Information Tech&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <p><strong>GET vs POST Form Methods:</strong></p>
+                <ul>
+                    <li><strong>GET:</strong> Appends form parameters directly to the URL query string. Visible in address bar, cached, bookmarked, limited data size (~2048 chars). Never use for passwords.</li>
+                    <li><strong>POST:</strong> Sends data within the HTTP request body. Invisible in URL, not cached, no strict size limit, supports multipart file uploads.</li>
+                </ul>
+
+                <h3>1.5 Frames & Inline Frames (iFrames)</h3>
+                <p>
+                    While legacy HTML <code>&lt;frameset&gt;</code> and <code>&lt;frame&gt;</code> tags are deprecated in HTML5 due to usability and SEO issues, modern web development relies heavily on <strong><code>&lt;iframe&gt;</code> (Inline Frame)</strong> to embed third-party widgets, maps, videos, or documents directly into a page.
+                </p>
+                <p>Security is reinforced via the <code>sandbox</code> attribute to restrict scripts, popups, and form submissions from untrusted origins.</p>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>2. Cascading Style Sheets (CSS)</h2>
+                <p>CSS dictates the visual presentation, typography, colors, and responsive layouts across different screen sizes.</p>
+
+                <h3>2.1 Three Ways to Apply CSS:</h3>
+                <ol>
+                    <li><strong>Inline CSS:</strong> Applied directly inside HTML elements using <code>style="..."</code>. High specificity, poor reusability.</li>
+                    <li><strong>Internal / Embedded CSS:</strong> Placed inside <code>&lt;style&gt;</code> tags within the <code>&lt;head&gt;</code> section.</li>
+                    <li><strong>External CSS:</strong> Stored in an external <code>.css</code> file linked via <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>. Best practice for maintainability and browser caching.</li>
+                </ol>
+
+                <h3>2.2 The CSS Box Model:</h3>
+                <p>Every element in CSS is represented as a rectangular box comprising four concentric layers:</p>
+                <ul>
+                    <li><strong>Content:</strong> The innermost area where text and images appear.</li>
+                    <li><strong>Padding:</strong> Transparent area clearing space around the content (inside border).</li>
+                    <li><strong>Border:</strong> Surrounds the padding and content.</li>
+                    <li><strong>Margin:</strong> Transparent area outside the border separating the element from its neighbors.</li>
+                </ul>
+                <div class="note-box">
+                    <strong>Total Calculated Width =</strong> Content Width + Left/Right Padding + Left/Right Border + Left/Right Margin.<br>
+                    <em>Tip:</em> Using <code>box-sizing: border-box;</code> ensures width includes padding and border, preventing unexpected layout overflows.
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>3. Dynamic HTML (DHTML) with JavaScript</h2>
+                <p>
+                    <strong>DHTML (Dynamic HTML)</strong> is not a distinct programming language; rather, it is the synergistic combination of <strong>HTML + CSS + JavaScript + DOM</strong> to create interactive, animated, and responsive web pages that update without page reloads.
+                </p>
+
+                <h3>Core Pillars of DHTML:</h3>
+                <ul>
+                    <li><strong>HTML:</strong> Provides document content and structure.</li>
+                    <li><strong>CSS:</strong> Controls style, position, visibility, and layout.</li>
+                    <li><strong>JavaScript:</strong> Acts as the client-side scripting engine to implement logic.</li>
+                    <li><strong>DOM (Document Object Model):</strong> The programming interface exposing all HTML elements as controllable JS objects.</li>
+                </ul>
+
+                <h3>Event-Driven Manipulation Example:</h3>
+<pre><code>&lt;!-- Button dynamically altering CSS and text via DOM events --&gt;
+&lt;div id="statusBox"&gt;Original Text&lt;/div&gt;
+&lt;button onclick="changeStyle()"&gt;Change State&lt;/button&gt;
+
+&lt;script&gt;
+function changeStyle() {
+    var box = document.getElementById("statusBox");
+    box.innerHTML = "Updated Dynamically via DHTML!";
+    box.style.backgroundColor = "#2563eb";
+    box.style.color = "#ffffff";
+    box.style.padding = "10px";
+}
+&lt;/script&gt;</code></pre>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>4. Extensible Markup Language (XML), DTD & XML Schemas</h2>
+                <p>
+                    <strong>XML (Extensible Markup Language)</strong> is a W3C standard designed to store and transport structured data. Unlike HTML which defines <em>how data looks</em>, XML defines <em>what data is</em>.
+                </p>
+
+                <h3>4.1 Well-Formed vs. Valid XML</h3>
+                <ul>
+                    <li><strong>Well-Formed XML:</strong> Satisfies basic syntax rules: has a single root element, all tags are properly closed and nested, tag names are case-sensitive, attribute values are quoted.</li>
+                    <li><strong>Valid XML:</strong> Is both well-formed AND conforms to a formal grammar definition defined in a <strong>DTD</strong> or <strong>XML Schema (XSD)</strong>.</li>
+                </ul>
+
+                <h3>4.2 Document Type Definition (DTD)</h3>
+                <p>A DTD defines the legal building blocks of an XML document (elements, attributes, nesting rules).</p>
+<pre><code>&lt;!-- sample DTD definition (book.dtd) --&gt;
+&lt;!ELEMENT library (book+)&gt;
+&lt;!ELEMENT book (title, author, price)&gt;
+&lt;!ELEMENT title (#PCDATA)&gt;
+&lt;!ELEMENT author (#PCDATA)&gt;
+&lt;!ELEMENT price (#PCDATA)&gt;
+&lt;!ATTLIST book id CDATA #REQUIRED&gt;</code></pre>
+
+                <h3>4.3 XML Schema Definition (XSD) vs DTD</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>DTD (Document Type Definition)</th>
+                                <th>XML Schema (XSD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Syntax</strong></td>
+                                <td>Uses non-XML proprietary grammar syntax.</td>
+                                <td>Written purely in <strong>XML syntax</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Types</strong></td>
+                                <td>Basic text types only (PCDATA, CDATA).</td>
+                                <td>Rich data types (integer, date, boolean, float, custom regex patterns).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Namespaces</strong></td>
+                                <td>Does not support XML Namespaces.</td>
+                                <td>Full native support for namespaces.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Extensibility</strong></td>
+                                <td>Rigid, hard to inherit or extend.</td>
+                                <td>Highly extensible and reusable through inheritance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>5. Presenting XML & XML Processors (DOM vs. SAX)</h2>
+
+                <h3>5.1 Presenting XML</h3>
+                <p>Browsers do not have built-in styling rules for custom XML tags. XML can be presented via:</p>
+                <ol>
+                    <li><strong>CSS for XML:</strong> Linking a CSS file directly to an XML file using <code>&lt;?xml-stylesheet type="text/css" href="style.css"?&gt;</code>.</li>
+                    <li><strong>XSL / XSLT (Extensible Stylesheet Language Transformations):</strong> A powerful rule-based language that transforms raw XML documents into standard HTML/XHTML before rendering in the browser.</li>
+                </ol>
+
+                <h3>5.2 XML Processors: DOM vs. SAX</h3>
+                <p>An XML Parser (Processor) reads an XML document and provides an API for applications to access its content.</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comparison Criteria</th>
+                                <th>DOM (Document Object Model) Parser</th>
+                                <th>SAX (Simple API for XML) Parser</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Processing Paradigm</strong></td>
+                                <td><strong>Tree-based:</strong> Loads the entire XML document into system memory as an in-memory hierarchical tree.</td>
+                                <td><strong>Event-based:</strong> Reads XML stream sequentially from top to bottom, emitting events (<code>startDocument</code>, <code>startElement</code>, <code>characters</code>, <code>endElement</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory Overhead</strong></td>
+                                <td>High memory consumption (proportional to document size). Not recommended for huge files.</td>
+                                <td>Very low and constant memory footprint regardless of file size.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navigation</strong></td>
+                                <td>Bidirectional traversal (can traverse up to parent, down to children, sideways to siblings).</td>
+                                <td>One-way forward streaming traversal only. Cannot backtrack without re-reading.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Read / Write</strong></td>
+                                <td>Supports both <strong>Reading and Modifying</strong> (node insertion, deletion, updating).</td>
+                                <td><strong>Read-Only</strong> parser. Cannot manipulate or modify the XML stream directly.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best Use Case</strong></td>
+                                <td>When frequent random node access, updates, or XPATH queries are needed on moderate files.</td>
+                                <td>When parsing massive multi-gigabyte XML logs, mobile devices with constrained RAM, or fast one-pass reading.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box exam-tip">
+                    <strong>Exam Quick Revision Checklist for Unit 2:</strong><br>
+                    &bull; Difference between GET and POST form methods.<br>
+                    &bull; The CSS Box Model (Margin, Border, Padding, Content) with formula.<br>
+                    &bull; DHTML components and how JS accesses DOM elements.<br>
+                    &bull; Key differences between DTD and XML Schema (XSD).<br>
+                    &bull; Thorough comparison: DOM Parser (tree, in-memory) vs SAX Parser (stream, event-driven).
+                </div>
+            </article>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="nav-bottom">
+                <div>
+                    <a href="unit1.html" class="btn btn-secondary">⬅ Prev: Unit 1</a>
+                    <a href="index.html" class="btn btn-secondary">🏠 Syllabus Table</a>
+                </div>
+                <div class="nav-bottom-right">
+                    <a href="unit3.html" class="btn btn-primary">Next: Unit 3 ➡</a>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Department of Computer Science & Engineering</strong> &bull; B.Tech 5th Semester</p>
+        <p>Web Technology (CS35302) &bull; Unit 2 Study Material</p>
+    </footer>
+
+</body>
+</html>

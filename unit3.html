@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Web Services, SOAP, WSDL, UDDI, Ajax & CORBA - Web Technology (CS35302)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="sub-badge">Unit - 03 &bull; Duration: 7 Hours</div>
+        <h1>Web Services, SOAP, WSDL, UDDI, Ajax & CORBA</h1>
+        <p>Web Technology (CS35302) &bull; B.Tech CSE 5th Semester</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <section class="card">
+            <div class="card-title">
+                <span>Unit 3 Notes & Study Material</span>
+                <a href="notes/unit3.pdf" target="_blank" class="btn btn-outline">📥 Download PDF Notes</a>
+            </div>
+
+            <!-- PDF Viewer Section -->
+            <div class="pdf-fallback">
+                <span><strong>📄 PDF Reader:</strong> Neeche PDF viewer me notes padhein ya seedhe download karein.</span>
+                <a href="notes/unit3.pdf" target="_blank" class="btn btn-primary">Open Fullscreen PDF ↗</a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="notes/unit3.pdf" title="Unit 3 Full Notes PDF">
+                    <p>Your browser does not support iframes. <a href="notes/unit3.pdf">Click here to view or download the PDF file.</a></p>
+                </iframe>
+            </div>
+
+            <!-- Full-Length Comprehensive Notes Text -->
+            <article class="notes-content">
+                <h2>1. Introduction to Web Services</h2>
+                <p>
+                    A <strong>Web Service</strong> is a standardized software application designed to support interoperable machine-to-machine interaction over a network. It uses open XML/JSON standards and Internet protocols (HTTP/HTTPS) to allow heterogeneous systems (e.g., Java client communicating with a .NET backend) to exchange data seamlessly.
+                </p>
+
+                <h3>Key Characteristics of Web Services:</h3>
+                <ul>
+                    <li><strong>Platform & Language Independent:</strong> Written in any language (Java, C#, Python) running on any OS (Linux, Windows, Unix).</li>
+                    <li><strong>Loose Coupling:</strong> Client and server components are decoupled; interface changes do not break client implementation.</li>
+                    <li><strong>Standardized Protocols:</strong> Relies on universally accepted industry standards: XML, SOAP, WSDL, and UDDI.</li>
+                    <li><strong>Firewall Friendly:</strong> Uses standard HTTP/HTTPS ports (80/443), eliminating custom firewall configuration barriers.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>2. Web Service Architecture (Publish-Find-Bind Triangle)</h2>
+                <p>The Web Service Architecture revolves around three core architectural entities and three operations:</p>
+                <div class="note-box">
+                    <strong>The Web Service Triangle:</strong><br><br>
+                    &bull; <strong>Service Provider:</strong> Creates the web service and makes it available on the Internet. It defines the service description using WSDL and <em>publishes</em> it to a service registry.<br><br>
+                    &bull; <strong>Service Registry (Broker):</strong> A central searchable repository (UDDI) that catalogs service descriptions submitted by service providers.<br><br>
+                    &bull; <strong>Service Requester (Consumer):</strong> The client application that wants to invoke the service. It <em>finds</em> the service in the registry, retrieves the WSDL interface, and <em>binds</em> to the provider over SOAP/HTTP.
+                </div>
+
+                <h3>The Three Core Operations:</h3>
+                <ol>
+                    <li><strong>Publish:</strong> Provider registers the service description in UDDI.</li>
+                    <li><strong>Find:</strong> Consumer queries UDDI to locate a specific service based on criteria.</li>
+                    <li><strong>Bind:</strong> Consumer invokes the service using contract specifications found in the WSDL file.</li>
+                </ol>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>3. Core Web Service Protocols: UDDI, SOAP & WSDL</h2>
+
+                <h3>3.1 UDDI (Universal Description, Discovery, and Integration)</h3>
+                <p>
+                    UDDI is an XML-based registry standard that acts as the "Yellow Pages" for web businesses and their electronic services.
+                </p>
+                <p>UDDI organizes information into three categories:</p>
+                <ul>
+                    <li><strong>White Pages:</strong> Basic contact details (business name, address, phone number, website, unique identifier).</li>
+                    <li><strong>Yellow Pages:</strong> Categorizes services based on standard industrial taxonomy codes (e.g., NAICS, UN/SPSC).</li>
+                    <li><strong>Green Pages:</strong> Technical specifications and binding details pointing to the WSDL files describing how to interact with the service.</li>
+                </ul>
+
+                <h3>3.2 SOAP (Simple Object Access Protocol)</h3>
+                <p>
+                    SOAP is a formal XML-based protocol specification for exchanging structured information in decentralized, distributed environments over application protocols such as HTTP or SMTP.
+                </p>
+                <h4>Structure of a SOAP Message:</h4>
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    &lt;soap:Header&gt;
+        &lt;!-- Optional: Authentication tokens, transactions, routing --&gt;
+        &lt;auth:Token xmlns:auth="http://example.com/auth"&gt;xyz9876&lt;/auth:Token&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;!-- Mandatory: Actual request or response payload --&gt;
+        &lt;m:GetStockPrice xmlns:m="http://example.com/stocks"&gt;
+            &lt;m:StockTicker&gt;GOOG&lt;/m:StockTicker&gt;
+        &lt;/m:GetStockPrice&gt;
+        &lt;!-- Optional: SOAP Fault element for error handling --&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre>
+                <ul>
+                    <li><strong>Envelope (Mandatory):</strong> Root element identifying the XML document as a SOAP message.</li>
+                    <li><strong>Header (Optional):</strong> Contains application-specific information such as authentication, encryption, and routing data.</li>
+                    <li><strong>Body (Mandatory):</strong> Holds the actual call data, parameters, or return response.</li>
+                    <li><strong>Fault (Optional):</strong> Sub-element inside Body used exclusively to carry error and exception status information.</li>
+                </ul>
+
+                <h3>3.3 WSDL (Web Services Description Language)</h3>
+                <p>
+                    WSDL is an XML format for describing network services as a set of endpoints operating on messages containing either document-oriented or RPC-oriented information.
+                </p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Section Level</th>
+                                <th>WSDL Element</th>
+                                <th>Function / Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3"><strong>Abstract Definitions</strong><br>(Independent of platform/wire)</td>
+                                <td><code>&lt;types&gt;</code></td>
+                                <td>Defines data types using XML Schema (XSD).</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;message&gt;</code></td>
+                                <td>Defines the data parameters for input and output operations.</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;portType&gt;</code></td>
+                                <td>Defines callable operations (methods) and related messages (like an Interface).</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Concrete Definitions</strong><br>(Transport & network binding)</td>
+                                <td><code>&lt;binding&gt;</code></td>
+                                <td>Specifies communication protocol (e.g., SOAP over HTTP) and message formats.</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;service&gt; / &lt;port&gt;</code></td>
+                                <td>Specifies the physical endpoint address (URL) where the service resides.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>4. Developing and Deploying Web Services</h2>
+                <p>Building and releasing a web service typically involves two distinct design methodologies:</p>
+                <ul>
+                    <li><strong>Contract-First (Top-Down):</strong> Write the WSDL & XSD first; then auto-generate server skeleton code and client stubs (ensures high cross-platform compatibility).</li>
+                    <li><strong>Code-First (Bottom-Up):</strong> Write the Java/C# service class and annotate it (e.g., <code>@WebService</code> in JAX-WS); the framework automatically publishes the WSDL at runtime.</li>
+                </ul>
+                <p><strong>Deployment Steps:</strong> Compile service classes &rarr; Package into archive (.WAR / .EAR) &rarr; Deploy to an enterprise application server (Apache Tomcat with Axis2, GlassFish, WildFly) &rarr; Verify WSDL endpoint availability in browser.</p>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>5. Ajax (Asynchronous JavaScript and XML)</h2>
+                <p>
+                    <strong>Ajax</strong> is a client-side technique introduced to overcome the traditional synchronous "click-wait-reload" web paradigm.
+                </p>
+
+                <h3>5.1 Improving Web Page Performance using Ajax:</h3>
+                <ul>
+                    <li><strong>Zero Page Flicker:</strong> Only small portions of the page are updated dynamically without refreshing the entire layout.</li>
+                    <li><strong>Bandwidth Conservation:</strong> Eliminates re-downloading identical headers, sidebars, navigation menus, and CSS stylesheets on every interaction.</li>
+                    <li><strong>Responsive Desktop-Like User Experience:</strong> Instantaneous auto-complete suggestions, live feeds, and background saves.</li>
+                    <li><strong>Asynchronous Non-Blocking Execution:</strong> The user can continue interacting with the page while the background data transfer takes place.</li>
+                </ul>
+
+                <h3>5.2 Programming in Ajax: The <code>XMLHttpRequest</code> Object</h3>
+<pre><code>// Pure JavaScript Ajax Request
+function loadUserData() {
+    var xhr = new XMLHttpRequest();
+    
+    // Configure request: method, URL, asynchronous (true)
+    xhr.open("GET", "/api/users?id=101", true);
+    
+    // Register state change listener
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Parse server response and update DOM
+            document.getElementById("profile").innerHTML = xhr.responseText;
+        }
+    };
+    
+    // Send request payload to server
+    xhr.send();
+}</code></pre>
+
+                <div class="note-box">
+                    <strong>The 5 ReadyStates of XMLHttpRequest:</strong><br>
+                    &bull; <code>0: UNSENT</code> &mdash; Client created, <code>open()</code> not called yet.<br>
+                    &bull; <code>1: OPENED</code> &mdash; <code>open()</code> called.<br>
+                    &bull; <code>2: HEADERS_RECEIVED</code> &mdash; <code>send()</code> called, headers received.<br>
+                    &bull; <code>3: LOADING</code> &mdash; Downloading response body in chunks.<br>
+                    &bull; <code>4: DONE</code> &mdash; Entire data transfer completed successfully.
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>6. CORBA (Common Object Request Broker Architecture)</h2>
+                <p>
+                    Developed by the Object Management Group (OMG), <strong>CORBA</strong> is an open vendor-independent architecture and infrastructure that computer applications use to work together over networks.
+                </p>
+
+                <h3>6.1 Key Components of CORBA:</h3>
+                <ul>
+                    <li><strong>ORB (Object Request Broker):</strong> The communication middleware that transparently routes method invocations from client to remote server object and returns results.</li>
+                    <li><strong>IDL (Interface Definition Language):</strong> A strictly typed declarative language used to define remote object interfaces independent of programming languages.</li>
+                    <li><strong>IIOP (Internet Inter-ORB Protocol):</strong> TCP/IP-based wire protocol enabling different vendor ORBs to interoperate across the network.</li>
+                </ul>
+
+                <h3>6.2 Web Services vs. CORBA (Comparison):</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>CORBA</th>
+                                <th>Web Services (SOAP/REST)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Data Format</strong></td>
+                                <td>Binary (CDR - Common Data Representation). High speed, low readability.</td>
+                                <td>Text/XML/JSON. Human readable, platform-neutral.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transport Protocol</strong></td>
+                                <td>Custom TCP ports via IIOP. Usually blocked by enterprise firewalls.</td>
+                                <td>Standard HTTP/HTTPS (ports 80/443). Universally accessible across firewalls.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coupling</strong></td>
+                                <td>Tightly coupled binary RPC mechanisms.</td>
+                                <td>Loosely coupled message exchange.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Complexity</strong></td>
+                                <td>Steep learning curve, high vendor dependency.</td>
+                                <td>Simpler, open web-based tooling and ubiquitous browser support.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box exam-tip">
+                    <strong>Exam Quick Revision Checklist for Unit 3:</strong><br>
+                    &bull; Draw the Web Service Triangle (Service Provider, Registry, Consumer with Publish, Find, Bind).<br>
+                    &bull; Elements of a SOAP message (Envelope, Header, Body, Fault).<br>
+                    &bull; WSDL building blocks (types, message, portType, binding, service).<br>
+                    &bull; AJAX readyState values (0 to 4) and status codes (200, 404).<br>
+                    &bull; CORBA ORB & IDL vs Web Services architectural comparison.
+                </div>
+            </article>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="nav-bottom">
+                <div>
+                    <a href="unit2.html" class="btn btn-secondary">⬅ Prev: Unit 2</a>
+                    <a href="index.html" class="btn btn-secondary">🏠 Syllabus Table</a>
+                </div>
+                <div class="nav-bottom-right">
+                    <a href="unit4.html" class="btn btn-primary">Next: Unit 4 ➡</a>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Department of Computer Science & Engineering</strong> &bull; B.Tech 5th Semester</p>
+        <p>Web Technology (CS35302) &bull; Unit 3 Study Material</p>
+    </footer>
+
+</body>
+</html>

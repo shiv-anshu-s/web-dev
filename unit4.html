@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Web 2.0, Web 3.0, Semantic Web, Search Engines & Edge Computing - Web Technology (CS35302)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="sub-badge">Unit - 04 &bull; Duration: 7 Hours</div>
+        <h1>Web 2.0, Web 3.0, Semantic Web & Emerging Paradigms</h1>
+        <p>Web Technology (CS35302) &bull; B.Tech CSE 5th Semester</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <section class="card">
+            <div class="card-title">
+                <span>Unit 4 Notes & Study Material</span>
+                <a href="notes/unit4.pdf" target="_blank" class="btn btn-outline">📥 Download PDF Notes</a>
+            </div>
+
+            <!-- PDF Viewer Section -->
+            <div class="pdf-fallback">
+                <span><strong>📄 PDF Reader:</strong> Neeche PDF viewer me notes padhein ya seedhe download karein.</span>
+                <a href="notes/unit4.pdf" target="_blank" class="btn btn-primary">Open Fullscreen PDF ↗</a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="notes/unit4.pdf" title="Unit 4 Full Notes PDF">
+                    <p>Your browser does not support iframes. <a href="notes/unit4.pdf">Click here to view or download the PDF file.</a></p>
+                </iframe>
+            </div>
+
+            <!-- Full-Length Comprehensive Notes Text -->
+            <article class="notes-content">
+                <h2>1. Evolution of the Web: Web 1.0 vs. Web 2.0 vs. Web 3.0</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Web 1.0 (Read-Only Web)</th>
+                                <th>Web 2.0 (Read-Write / Social Web)</th>
+                                <th>Web 3.0 (Read-Write-Execute / Semantic Web)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Core Focus</strong></td>
+                                <td>Static web pages, passive information consumption.</td>
+                                <td>User-generated content, collaboration, social networking.</td>
+                                <td>Machine-readable data, decentralization, intelligence, semantic ontologies.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Interaction</strong></td>
+                                <td>One-directional (Webmaster &rarr; User).</td>
+                                <td>Bidirectional & Multi-directional (User &harr; User).</td>
+                                <td>Context-aware, autonomous AI agents, trustless peer networks.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tech Stack</strong></td>
+                                <td>HTML, basic CSS, CGI scripts.</td>
+                                <td>AJAX, Javascript frameworks, REST APIs, Cloud databases.</td>
+                                <td>RDF, OWL, SPARQL, Blockchain, IPFS, Smart Contracts, AI/ML.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>2. Web 2.0: Interactive and Social Web</h2>
+                <p>Coined by Dale Dougherty and popularized by Tim O'Reilly in 2004, <strong>Web 2.0</strong> refers to web applications that emphasize user-generated content, ease of use, participative culture, and interoperability.</p>
+
+                <h3>2.1 Core Pillars of Web 2.0:</h3>
+                <ul>
+                    <li><strong>Blogs:</strong> Chronological personal or corporate journals with commenting mechanisms (e.g., WordPress, Medium).</li>
+                    <li><strong>Wikis:</strong> Collaborative knowledge repositories where any authorized user can create, edit, and link hyperlinked pages (e.g., Wikipedia).</li>
+                    <li><strong>Social Networking Platforms:</strong> Graph-based platforms facilitating social connections, media sharing, and real-time interaction (LinkedIn, X, Facebook).</li>
+                </ul>
+
+                <h3>2.2 Enabling Technologies Behind Web 2.0:</h3>
+                <ul>
+                    <li><strong>AJAX:</strong> Facilitates seamless background updates without full page refreshes.</li>
+                    <li><strong>RSS (Really Simple Syndication):</strong> An XML-based format allowing web publishers to syndicate content feeds automatically to subscribed aggregators.</li>
+                    <li><strong>Ruby on Rails (RoR):</strong> Server-side web framework popularizing "Convention over Configuration" and rapid MVC scaffolding.</li>
+                    <li><strong>Open APIs (RESTful Web Services):</strong> Exposing endpoints using JSON over HTTP allowing third-party developers to integrate services (e.g., Google Maps API, Stripe payment gateway).</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>3. Web 3.0: Semantic Web, Widgets, Mashups & RDF</h2>
+
+                <h3>3.1 The Semantic Web</h3>
+                <p>
+                    Proposed by Sir Tim Berners-Lee, the <strong>Semantic Web</strong> aims to make web data machine-understandable so computers and software agents can process, infer, and connect disparate data sources intelligently.
+                </p>
+
+                <h3>3.2 RDF (Resource Description Framework)</h3>
+                <p>
+                    RDF is the standard data model for the Semantic Web. It represents statements about resources as <strong>Triples</strong> consisting of three parts:
+                </p>
+                <div class="note-box">
+                    <strong>RDF Triple Structure:</strong><br>
+                    <strong>(Subject &mdash; Predicate &mdash; Object)</strong><br><br>
+                    <em>Example:</em><br>
+                    &bull; <strong>Subject:</strong> <code>https://college.edu/faculty/dr_smith</code> (URI)<br>
+                    &bull; <strong>Predicate:</strong> <code>http://xmlns.com/foaf/0.1/teaches</code><br>
+                    &bull; <strong>Object:</strong> <code>"Web Technology CS35302"</code>
+                </div>
+                <p>
+                    RDF triples form a directed labeled graph across the global web. The graph is queried using <strong>SPARQL</strong> (SPARQL Protocol and RDF Query Language).
+                </p>
+
+                <h3>3.3 Widgets and Mashups</h3>
+                <ul>
+                    <li><strong>Widgets:</strong> Portable, self-contained interactive components embeddable into any webpage (e.g., weather widget, live stock ticker).</li>
+                    <li><strong>Mashups:</strong> Composite web applications that seamlessly aggregate data or functionality from two or more distinct open APIs into a unified user interface (e.g., combining Real Estate listings with Google Maps to show home locations and crime rates).</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>4. Web-Based Information Systems, Search Engines & Recommenders</h2>
+
+                <h3>4.1 Search Engine Architecture</h3>
+                <p>Modern search engines process billions of queries through three foundational stages:</p>
+                <ol>
+                    <li><strong>Web Crawling (Spiders/Bots):</strong> Automated bots (e.g., Googlebot) systematically discover and download pages by following hyperlinks across the web graph.</li>
+                    <li><strong>Indexing:</strong> Parses downloaded HTML, extracts terms, eliminates stop words (e.g., "the", "and"), stems words, and builds an <strong>Inverted Index</strong> (a lookup dictionary mapping keywords to the list of document IDs containing them).</li>
+                    <li><strong>Ranking & Retrieval:</strong> Evaluates query matches using algorithmic scoring:
+                        <ul>
+                            <li><strong>TF-IDF (Term Frequency - Inverse Document Frequency):</strong> Evaluates term relevance within a document relative to the whole corpus.</li>
+                            <li><strong>Google PageRank:</strong> Evaluates link popularity by treating inbound hyperlinks as recursive votes of credibility.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>4.2 Recommender Systems</h3>
+                <p>Algorithms that predict user preferences and suggest relevant items (e.g., Netflix movies, Amazon products):</p>
+                <ul>
+                    <li><strong>Content-Based Filtering:</strong> Recommends items similar to those the user has liked in the past based on product features (e.g., genres, actors, keywords).</li>
+                    <li><strong>Collaborative Filtering:</strong> Recommends items based on collective behavior and similarities across users:
+                        <ul>
+                            <li><em>User-Based:</em> Finds users with similar rating histories and recommends what they enjoyed.</li>
+                            <li><em>Item-Based:</em> Recommends items frequently purchased together by the community.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hybrid Systems:</strong> Blends content-based and collaborative algorithms to overcome cold-start issues (e.g., new items with no ratings).</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>5. Modern Web Paradigms: Blockchain, Edge Computing & Dark Mode</h2>
+
+                <h3>5.1 Benefits of Blockchain in Web Development:</h3>
+                <ul>
+                    <li><strong>Decentralized Authentication (Web3 Login):</strong> Users authenticate via cryptographic cryptographic wallets (e.g., MetaMask) without passwords or centralized OAuth trackers.</li>
+                    <li><strong>Tamper-Proof Audit Trails:</strong> Immutable public ledgers guarantee transparency for supply chains, transactions, and voting.</li>
+                    <li><strong>Smart Contracts:</strong> Self-executing agreements enforced directly in code without intermediaries.</li>
+                </ul>
+
+                <h3>5.2 Edge Computing in Web Architectures:</h3>
+                <p>
+                    Traditional cloud architecture centralizes computation in massive data centers far from users. <strong>Edge Computing</strong> moves serverless compute logic (e.g., Cloudflare Workers, AWS Lambda@Edge) and caching directly to Content Delivery Network (CDN) edge nodes physically adjacent to the client.
+                </p>
+                <p><strong>Key Benefits:</strong> Drastically reduced round-trip latency (sub-10ms response), decreased central server bandwidth, and high resilience against distributed Denial-of-Service (DDoS) attacks.</p>
+
+                <h3>5.3 Dark Mode in Web Development:</h3>
+                <p>Modern web standards natively support system-level theme switching through CSS media queries:</p>
+<pre><code>@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f172a;
+        color: #f8fafc;
+    }
+}</code></pre>
+                <p><strong>Benefits:</strong> Significant battery power savings on OLED and AMOLED displays, reduced eye fatigue in low-light environments, and higher accessibility standards (WCAG contrast ratios).</p>
+
+                <div class="note-box exam-tip">
+                    <strong>Exam Quick Revision Checklist for Unit 4:</strong><br>
+                    &bull; Evolutionary comparison: Web 1.0 vs Web 2.0 vs Web 3.0.<br>
+                    &bull; Structure of an RDF Triple (Subject, Predicate, Object).<br>
+                    &bull; Definition of Mashups with real-world examples.<br>
+                    &bull; Architecture of a Search Engine (Crawler &rarr; Inverted Index &rarr; PageRank).<br>
+                    &bull; Collaborative vs Content-Based filtering in recommender systems.
+                </div>
+            </article>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="nav-bottom">
+                <div>
+                    <a href="unit3.html" class="btn btn-secondary">⬅ Prev: Unit 3</a>
+                    <a href="index.html" class="btn btn-secondary">🏠 Syllabus Table</a>
+                </div>
+                <div class="nav-bottom-right">
+                    <a href="unit5.html" class="btn btn-primary">Next: Unit 5 ➡</a>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Department of Computer Science & Engineering</strong> &bull; B.Tech 5th Semester</p>
+        <p>Web Technology (CS35302) &bull; Unit 4 Study Material</p>
+    </footer>
+
+</body>
+</html>

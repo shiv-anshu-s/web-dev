@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5: Web 4.0, AI Web, Decentralized Web, IoT, AR/VR & 5G - Web Technology (CS35302)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="sub-badge">Unit - 05 &bull; Duration: 7 Hours</div>
+        <h1>Web 4.0, AI Web, Decentralized Web, IoT & 5G</h1>
+        <p>Web Technology (CS35302) &bull; B.Tech CSE 5th Semester</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <section class="card">
+            <div class="card-title">
+                <span>Unit 5 Notes & Study Material</span>
+                <a href="notes/unit5.pdf" target="_blank" class="btn btn-outline">📥 Download PDF Notes</a>
+            </div>
+
+            <!-- PDF Viewer Section -->
+            <div class="pdf-fallback">
+                <span><strong>📄 PDF Reader:</strong> Neeche PDF viewer me notes padhein ya seedhe download karein.</span>
+                <a href="notes/unit5.pdf" target="_blank" class="btn btn-primary">Open Fullscreen PDF ↗</a>
+            </div>
+
+            <div class="pdf-container">
+                <iframe src="notes/unit5.pdf" title="Unit 5 Full Notes PDF">
+                    <p>Your browser does not support iframes. <a href="notes/unit5.pdf">Click here to view or download the PDF file.</a></p>
+                </iframe>
+            </div>
+
+            <!-- Full-Length Comprehensive Notes Text -->
+            <article class="notes-content">
+                <h2>1. Web 4.0: The Symbiotic & AI-Powered Web</h2>
+                <p>
+                    <strong>Web 4.0 (also called the Symbiotic or Intelligent Web)</strong> represents the next technological frontier where humans and machines interact in seamless symbiosis. While Web 3.0 focuses on structured semantic data and decentralization, Web 4.0 integrates <strong>Artificial Intelligence (AI), Machine Learning (ML), and Natural Language Processing (NLP)</strong> directly into the fabric of the web.
+                </p>
+
+                <h3>Key Characteristics of Web 4.0:</h3>
+                <ul>
+                    <li><strong>Autonomous Intelligent Agents:</strong> Autonomous AI agents capable of reasoning, booking reservations, orchestrating workflows, and negotiating transactions on behalf of users.</li>
+                    <li><strong>Real-Time Hyper-Personalization:</strong> Dynamic website interfaces that adapt in real time based on user biometric sentiment, intent, behavioral history, and environmental context.</li>
+                    <li><strong>Ubiquitous Connectivity:</strong> Seamless web presence across wearable devices, smart environments, voice assistants, and augmented reality glasses.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>2. Decentralized Web (DWeb) & Blockchain Integration</h2>
+                <p>
+                    The <strong>Decentralized Web (DWeb)</strong> shifts control away from monolithic centralized tech giants (cloud servers, data monopolies) toward distributed peer-to-peer (P2P) networks.
+                </p>
+
+                <h3>2.1 Core Pillars of DWeb:</h3>
+                <ul>
+                    <li><strong>IPFS (InterPlanetary File System):</strong> A peer-to-peer distributed file-sharing protocol that addresses content by <em>what it is</em> (cryptographic hash CID) rather than <em>where it is</em> (URL location). Eliminates central server single-points-of-failure.</li>
+                    <li><strong>Decentralized Identity (DIDs) & Verifiable Credentials:</strong> Self-Sovereign Identity (SSI) allowing users to control their personal credentials without relying on Google or Facebook logins.</li>
+                    <li><strong>Smart Contracts & dApps:</strong> Decentralized Applications whose backend code executes on distributed blockchain virtual machines (e.g., Ethereum EVM, Solana), ensuring zero downtime and censorship resistance.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>3. Internet of Things (IoT) in Web Development (Web of Things - WoT)</h2>
+                <p>
+                    The <strong>Web of Things (WoT)</strong> extends standard web architectures and patterns (URIs, HTTP/REST, WebSockets) to connect physical embedded sensors and smart devices directly to the World Wide Web.
+                </p>
+
+                <h3>3.1 IoT Web Protocols Comparison:</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Protocol</th>
+                                <th>Transport</th>
+                                <th>Architecture</th>
+                                <th>Key Characteristics & Web Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>MQTT</strong></td>
+                                <td>TCP</td>
+                                <td>Publish / Subscribe (Broker)</td>
+                                <td>Extremely lightweight, minimal packet headers (2 bytes), ideal for bandwidth-constrained microcontrollers (ESP32, Arduino).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CoAP</strong></td>
+                                <td>UDP</td>
+                                <td>Request / Response (REST-like)</td>
+                                <td>Constrained Application Protocol designed specifically for low-power lossy networks; easily bridges to HTTP.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>WebSockets</strong></td>
+                                <td>TCP (Port 80/443)</td>
+                                <td>Full-Duplex Persistent Channel</td>
+                                <td>Provides bidirectional real-time communication between browser telemetry dashboards and IoT hardware gateways.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>4. Augmented Reality (AR) & Virtual Reality (VR) in Web</h2>
+                <p>
+                    Immersive spatial computing has moved directly into web browsers without requiring users to download heavy standalone desktop or mobile apps.
+                </p>
+
+                <h3>4.1 WebXR Device API:</h3>
+                <p>
+                    <strong>WebXR</strong> is the modern W3C open standard that provides access to input controls and pose tracking for virtual reality (VR) headsets (e.g., Meta Quest, Apple Vision Pro) and mobile augmented reality (AR) sensors (ARKit / ARCore).
+                </p>
+                <div class="note-box">
+                    <strong>Core Web 3D / XR Technologies:</strong><br>
+                    &bull; <strong>WebGL / WebGPU:</strong> Low-level hardware-accelerated JavaScript graphics rendering APIs directly within the HTML5 <code>&lt;canvas&gt;</code>.<br>
+                    &bull; <strong>Three.js / Babylon.js:</strong> High-level 3D JavaScript libraries abstracting complex shaders, matrix transforms, lighting, and camera pipelines.<br>
+                    &bull; <strong>Real-World Applications:</strong> Virtual e-commerce furniture placement (IKEA Place), virtual automotive showrooms, medical surgical simulations, and metaverse classrooms.
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>5. Smart Web, Adaptive Interfaces & Web Automation</h2>
+
+                <h3>5.1 Adaptive Interfaces:</h3>
+                <p>
+                    Unlike traditional static responsive design (which merely resizes layout based on screen width), <strong>Adaptive Interfaces</strong> dynamically modify their behavior, navigation hierarchy, and layout based on user context:
+                </p>
+                <ul>
+                    <li><strong>Context-Aware Adaptation:</strong> Adapting to battery levels, network speed (Save-Data headers), ambient ambient light sensors, and device orientation.</li>
+                    <li><strong>Accessibility-First Design:</strong> Automatically enabling high contrast, increased font spacing, or voice navigation for visually or motor-impaired individuals.</li>
+                </ul>
+
+                <h3>5.2 Web Automation & Headless Browsers:</h3>
+                <p>
+                    <strong>Web Automation</strong> involves programmatically executing browser operations without manual human intervention.
+                </p>
+                <ul>
+                    <li><strong>Headless Browsers (Puppeteer, Playwright, Selenium):</strong> Run full browser engines without a visual GUI. Used for automated end-to-end regression testing, automated PDF generation, and web data extraction.</li>
+                    <li><strong>Robotic Process Automation (RPA):</strong> Automates repetitive legacy web workflows (e.g., enterprise data entry, invoice processing).</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+                <h2>6. Impact of 5G on Web Technologies</h2>
+                <p>
+                    The fifth generation of cellular networks (5G) brings revolutionary architectural improvements that redefine web application possibilities:
+                </p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>5G Pillar</th>
+                                <th>Performance Specification</th>
+                                <th>Direct Impact on Web Development</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>eMBB</strong><br>(Enhanced Mobile Broadband)</td>
+                                <td>Peak speeds up to 10–20 Gbps (100x faster than 4G).</td>
+                                <td>Instantaneous Progressive Web App (PWA) loading, zero-buffering 8K video streaming, and high-fidelity 3D assets on the web.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>URLLC</strong><br>(Ultra-Reliable Low Latency)</td>
+                                <td>Latency under 1 millisecond.</td>
+                                <td>Enables real-time cloud gaming on the web, remote robotic surgery web portals, and latency-free WebXR spatial interaction.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>mMTC</strong><br>(Massive Machine-Type Comm.)</td>
+                                <td>Supports 1 million devices per square kilometer.</td>
+                                <td>Massive Web of Things (WoT) scale; web dashboards can stream live telematics from thousands of smart city sensors concurrently.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box exam-tip">
+                    <strong>Exam Quick Revision Checklist for Unit 5:</strong><br>
+                    &bull; Definition of Web 4.0 (Symbiotic & AI-driven Web).<br>
+                    &bull; How IPFS content addressing differs from traditional HTTP URL addressing.<br>
+                    &bull; Differences between MQTT (pub/sub, low overhead) and HTTP for IoT.<br>
+                    &bull; WebXR, WebGL, and Three.js role in browser-based AR/VR.<br>
+                    &bull; The 3 pillars of 5G (eMBB, URLLC, mMTC) and their impact on web applications.
+                </div>
+            </article>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="nav-bottom">
+                <div>
+                    <a href="unit4.html" class="btn btn-secondary">⬅ Prev: Unit 4</a>
+                </div>
+                <div class="nav-bottom-right">
+                    <a href="index.html" class="btn btn-primary">🏠 Back to Syllabus Table</a>
+                </div>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Department of Computer Science & Engineering</strong> &bull; B.Tech 5th Semester</p>
+        <p>Web Technology (CS35302) &bull; Unit 5 Study Material</p>
+    </footer>
+
+</body>
+</html>
